@@ -1,0 +1,516 @@
+<!DOCTYPE HTML>
+<!--
+	Helios by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Manzoni Storytelling - project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="css/main.css" />
+		<noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <link rel="stylesheet" href="css/mapstylesheet.css">
+		<!-- Favicons -->
+		<link href="images/MSlogo.png" rel="icon">
+		<link href="images/apple-touch-icon.png" rel="apple-touch-icon">
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Inner -->
+						<div class="inner">
+							<header>
+								<h1><a href="index.html" id="logo">Manzoni Storytelling</a></h1>
+							</header>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<img src="images/MSlogo.png" alt="mslogo" height="30px" width="30px" class="navbarlogo">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="project.html">Progetto</a></li>
+								<li><a href="">Prima di iniziare</a>
+									<ul>
+										<li><a href="author.html" class="navdrop">Autore</a></li>
+										<li><a href="literarywork.html" class="navdrop">Romanzo</a></li>
+										<li><a href="characters.html" class="navdrop">Personaggi</a></li>
+										<li><a href="places.html" class="navdrop">Luoghi</a></li>
+									</ul>
+								</li>
+								<li><a href="" class="nav-active-page">Tempo & Spazio</a>
+									<ul>
+										<li><a href="timeline.html" class="navdrop">Fabula & Intreccio</a></li>
+										<li><a href="manz-history.html" class="navdrop">Romanzo e cultura europea contemporanea</a></li>
+										<li><a href="#" class="navdrop-active">Mappa</a></li>
+									</ul>
+								</li>
+								<li><a href="">È il tuo turno</a>
+									<ul>
+										<li><a href="narrseqchallenge.html" class="navdrop">Sfida delle sequenze narrative</a></li>
+										<li><a href="boxes.html" class="navdrop">Quanto conosci bene i presonaggi?</a></li>
+										<li><a href="whichchar.html" class="navdrop">Che personaggio sei?</a></li>
+									</ul>
+								</li>
+
+								<li><a href="">Dietro il progetto</a>
+									<ul>
+										<li><a href="help.html" class="navdrop">Aiuto</a></li>
+										<li><a href="references.html" class="navdrop">Bibliografia</a></li>
+									</ul>
+								</li>
+						
+							</ul>
+						</nav>
+<div class="languagepicker">
+                                <img id="popupIcon" src="images/grigiopastello-removebg-preview.png" alt="world" height="25px" style="cursor:pointer;">
+                            </div>
+
+					<!-- Popup -->
+					<div id="navpopup" class="navpopup">
+						<div class="navpopup-content">
+							<span id="closenavPopup" class="close">&times;</span>
+							<p>
+								<strong>Scegli la lingua</strong><br>
+								Questo sito web è disponibile in molte lingue oltre all’italiano.
+								Scegli qui la lingua che preferisci utilizzare per navigare i contenuti
+								e svolgere gli esercizi nel modo più comodo e semplice per te.
+							</p>
+							<div id="google_translate_element"></div>
+						</div>
+					</div>	
+
+				</div>
+<div class="wrapper style1">
+	<div class="container">
+		<br>
+		<p>Qui puoi esplorare dimensione spaziale usando la <strong>mappa digitale interattiva</strong> incentrata sull’Italia settentrionale, e in particolare sulla <strong>Lombardia</strong>, la regione dove si svolge la maggior parte degli eventi dei primi undici capitoli de <i>I Promessi Sposi</i>. <br>
+			Hai a disposizione <strong>tre menu</strong>: <strong style="color:#ff9903;">Luoghi</strong> (mostra tutte le località ed è attivo di dafault), <strong style="color:#ff7d97;">Capitoli</strong>  (evidenzia le ambientazioni relative ad un determinato capitolo) e <strong style="color:#516a5e;">Personaggi</strong> (traccia gli spostamenti di Renzo e Lucia).<br>
+			Scopri maggiori dettagli sulle fonti e sugli strumenti utilizzati per creare la mappa nella <strong><a href="project.html">pagina del progetto</a></strong>.
+		</p>
+</div>
+
+<section id="cd-map" class="cd-container">
+<button id="toggle-legend">Legenda</button>
+</section>
+<br>
+<section class="maplgend">
+<!-- Box legenda -->
+<div id="map-legend" class="hidden">
+    <ul class="mapul">
+        <li> <span class="legend-icon"><img src="images/renzoeluciamap-marker.png" alt="fabula watch" class="legend-icon"></span> <strong>R & L</strong> <p class="desc"> Renzo e Lucia sono insieme nel luogo indicato. <br> Cliccando sul marker, puoi scoprire ulteriori informazioni su ciò che accade in quel luogo mentre i due personaggi si trovano insieme. </p> </li>
+       	<li> <span class="legend-icon"><img src="images/renzomap-marker.png" alt="tangle plot" class="legend-icon"></span> <strong>Renzo</strong> <p class="desc"> Renzo si trova da solo, senza Lucia, nel luogo indicato. <br> Cliccando sul marker, puoi scoprire ulteriori informazioni su ciò che accade in quel luogo mentre Renzo è lì da solo, senza Lucia. </p> </li>
+		<li> <span class="legend-icon"><img src="images/luciamap-marker.png" alt="event" class="legend-icon"></span> <strong>Lucia</strong> <p class="desc"> Lucia si trova da sola, senza Renzo, nel luogo indicato. <br> Cliccando sul marker, puoi scoprire ulteriori informazioni su ciò che accade in quel luogo mentre Lucia è lì da sola, senza Renzo. </p> </li>
+		<li> <span class="legend-icon"><img src="images/map-marker.png" alt="fabula watch" id="placeholdericon"></span> <strong>Segnaposto</strong> <p class="desc"> I luoghi menzionati nella storia. <br> Cliccando sul marker, puoi scoprire maggiori informazioni su di essi. </p> </li>
+		<li> <span class="legend-icon"><img src="images/bookmark.png" alt="event" class="legend-icon" id="bookmarkicon"></span> <strong>Segnalibro</strong> <p class="desc"> Le ambientazioni in cui si svolgono gli eventi del capitolo specifico. <br> Cliccando sul marker, puoi scoprire maggiori informazioni sul capitolo di riferimento. </p> </li>
+    </ul>
+</div>
+
+
+<div class="select-row">
+<select class="form-select" id="select-place">
+    <option value="0">Seleziona il luogo</option>
+    <option value="all" selected>Tutti i luoghi</option>
+    <option value="Fiume_Adda">Fiume Adda</option>
+    <option value="Lago_di_Como">Lago di Como</option>
+    <option value="Lecco">Lecco</option>
+    <option value="Milano">Milano</option>
+    <option value="Monza">Monza</option>
+    <option value="Pescarenico">Pescarenico</option>
+    <option value="Villaggio">Villaggio</option>
+	<option value="Gorgonzola">Gorgonzola</option>
+	<option value="Venezia">Venezia</option>
+	<option value="Bergamo">Bergamo</option>
+	<option value="Venezia">Venezia</option>
+	<option value="Madrid">Madrid</option>
+	<option value="Castello_dell'_Innominato">Castello dell'Innominato</option>
+	<option value="Pavia">Pavia</option>
+	<option value="Palazzotto_del_Cardinal_Federigo_Borromeo">Palazzotto del Cardinal Federigo Borromeo</option>
+	
+</select>
+
+<select class="form-select" id="filterChapter">
+    <option value="0" selected>Seleziona il capitolo</option>
+    <option value="all">Tutti i capitoli</option>
+    <option value="1a">Capitolo 1a</option>
+	<option value="1b">Capitolo 1b</option>
+    <option value="2">Capitolo 2</option>
+    <option value="3">Capitolo 3</option>
+	<option value="4">Capitolo 4</option>
+	<option value="5">Capitolo 5</option>
+	<option value="6">Capitolo 6</option>
+	<option value="7">Capitolo 7</option>
+	<option value="8">Capitolo 8</option>
+	<option value="9">Capitolo 9</option>
+	<option value="10">Capitolo 10</option>
+	<option value="11">Capitolo 11</option>
+	<option value="12">Capitolo 12</option>
+	<option value="13">Capitolo 13</option>
+	<option value="14">Capitolo 14</option>
+	<option value="15">Capitolo 15</option>
+	<option value="16a">Capitolo 16a</option>
+	<option value="16b">Capitolo 16b</option>
+	<option value="17a">Capitolo 17a</option>
+	<option value="17b">Capitolo 17b</option>
+	<option value="17c">Capitolo 17c</option>
+	<option value="18a">Capitolo 18a</option>
+	<option value="18b">Capitolo 18b</option>
+	<option value="18c">Capitolo 18c</option>
+	<option value="18d">Capitolo 18d</option>
+	<option value="18e">Capitolo 18e</option>
+	<option value="19a">Capitolo 19a</option>
+	<option value="19b">Capitolo 19b</option>
+	<option value="20">Capitolo 20</option>
+	<option value="21">Capitolo 21</option>
+	<option value="22a">Capitolo 22a</option>
+	<option value="22b">Capitolo 22b</option>
+	<option value="23">Capitolo 23</option>
+</select>
+
+<select class="form-select" id="filterCharacters">
+    <option value="0" selected>Seleziona il personaggio</option>
+    <option value="all">Tutti i personaggi</option>
+    <option value="together">Insieme</option>
+    <option value="renzo">Solo Renzo</option>
+    <option value="lucia">Solo Lucia</option>
+</select>
+ <!--<div id="placesList" style="
+        display: none;
+        width: 300px;
+        overflow-y: auto;
+        background: #f8f9fa;
+        padding: 10px;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+        font-family: sans-serif;
+		height: auto;
+    "></div>
+</div>
+ <script>
+
+	//MENù SPECIFICO CHAR
+const filterCharacters = document.getElementById('filterCharacters');
+const placesList = document.getElementById('placesList');
+
+filterCharacters.addEventListener('change', () => {
+  const value = filterCharacters.value;
+
+  placesList.innerHTML = '';
+  placesList.style.display = 'none';
+
+  let pinsToShow = [];
+
+  if (value === 'renzo') {
+    pinsToShow = array_pin.filter(pin => pin.personaggio === 'da solo');
+  }
+
+  if (value === 'lucia') {
+    pinsToShow = array_pin.filter(pin => pin.personaggio === 'da sola');
+  }
+
+  if (value === 'together') {
+    pinsToShow = array_pin.filter(pin => pin.personaggio === 'insieme');
+  }
+
+  if (!pinsToShow.length) return;
+
+  const ul = document.createElement('ul');
+  ul.style.listStyle = 'none';
+  ul.style.padding = '0';
+  ul.style.margin = '0';
+
+  pinsToShow.forEach(pin => {
+    const li = document.createElement('li');
+    li.style.marginBottom = '6px';
+
+    li.innerHTML = `<a href="#">${pin.title}</a>`;
+
+    li.querySelector('a').addEventListener('click', e => {
+      e.preventDefault();
+      map.setView([pin.lat, pin.lng], 14);
+      pin.marker.openPopup();
+    });
+
+    ul.appendChild(li);
+  });
+
+  placesList.appendChild(ul);
+  placesList.style.display = 'block';
+});
+</script>-->
+ 
+</div>
+ <br>
+
+<section class="mapdiv">
+<div id="map"></div>
+  <br>
+  <br>
+</div>
+</div>
+</section>
+</section>
+
+		<!-- Footer -->
+				<div id="footer">
+					<div class="container">
+						<div class="row">
+								
+
+							<!-- Posts -->
+								<section class="col-2 col-12-mobile">
+									<header>
+										<h2>
+											<span class="circled">
+												<a href="https://github.com/alicepiazzi" target="_blank"><i class="fa-brands fa-github fa-beat-fade"></i></a>
+											</span> <br>
+											<h6>Dai un'occhiata a Github</h6>
+										</h2>
+									</header>
+									<br>
+									<ul class="divided">
+										<li>
+											<article class="tweet">
+												Ti è piaciuto questo progetto? <br>
+												<br>
+												<br>
+												Vuoi vedere come è stato costruito questo sito passo dopo passo?<br>
+												<br>
+												<br>
+												Esplora il <a href="https://github.com/dpaolillo/unibo-project" target="_blank">repository del prgetto</a> per approfondire. <br> 
+												Dai un’occhiata veloce al <a href="https://github.com/alicepiazzi" target="_blank">mio profilo GitHub</a> per scoprire altri progetti che ho realizzato.
+												<br>
+												<br>
+												<span class="timestamp">Vai a dare un’occhiata!!</span> 
+											</article>
+										</li>
+										
+										<li></li>
+									</ul>
+								</section>
+
+
+									<!-- Tweets -->
+								<section class="col-2 col-12-mobile">
+									<header>
+										<h2>
+											<span class="circled">
+												<a href="mailto:alicep2401@gmail.com"><i class="fa-solid fa-envelope fa-shake"></i></a>
+											</span> <br>
+											<h6>Mandami <br> 
+												un'e-mail</h6>
+										</h2>
+									</header>
+									<br>
+									<ul class="divided">
+										<li>
+											<article class="tweet">
+												Sei interessato al progetto? 
+												<br>
+												<br>
+												Vuoi far parte di qualcosa di entusiasmante e aiutare a far crescere questo progetto? <br>
+												<br>
+												<br>
+												Connettiti con me! Mandami una e-mail qui: <a href="mailto:alicep2401@gmail.com">alicep2401@gmail.com</a>
+												<br>
+												<span class="timestamp">Non vedo l’ora di sentirti!</span> 
+											</article>
+										</li>
+										<li></li>
+									</ul>
+								</section>
+
+								<!-- Tweets -->
+								<section class="col-2 col-12-mobile">
+									<header>
+										<h2>
+											<span class="circled">
+												<a href="https://www.linkedin.com/in/alice-piazzi-4a6687259/" target="_blank"><i class="fa-brands fa-linkedin fa-bounce"></i></a>
+											</span> <br>
+											<h6>Contattami su LinkedIn</h6>
+										</h2>
+									</header>
+									<br>
+									<ul class="divided">
+										<li>
+											<article class="tweet">
+												Vuoi metterti in contatto con me?<br>
+												<br>
+												<br>
+												Contattami su <a href="https://www.linkedin.com/in/alice-piazzi-4a6687259/" target="_blank">LinkedIn</a>!
+												<br>
+												<br>
+												<span class="timestamp">Sentiti libero di contattarmi su LinkedIn!</span> 
+											</article>
+										</li>
+										<li></li>
+									</ul>
+								</section>
+								
+<!-- Photos -->
+								<section class="col-2 col-12-mobile">
+									<header>
+										<h2>
+											<span class="circled">
+												<a href="https://www.instagram.com/alice.piazzii/" target="_blank"><i class="fa-brands fa-instagram fa-bounce"></i></a>
+											</span> <br>
+											<h6>Seguimi su Instagram</h6>
+										</h2>
+									</header>
+									<br>
+									<ul class="divided">
+										<li>
+											<article class="tweet">
+												Dai un’occhiata al <a href="https://www.instagram.com/alice.piazzii/">mio Instagram</a> per conoscermi meglio!
+												<br>
+												<br>
+												<span class="timestamp">Sentiti libero di seguirmi su Instagram!</span> 
+											</article>
+										</li>
+										<li></li>
+									</ul>
+
+								</section>
+
+
+								<section class="col-2 col-12-mobile">
+									<header>
+										<h2>
+											<span class="circled">
+												<a href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge"><i class="fa-solid fa-graduation-cap fa-shake"></i></a>
+											</span> <br>
+											<h6>Alma Mater Studiorum</h6>
+										</h2>
+									</header>
+									<br>
+									<ul class="divided">
+										<li>
+											<article class="tweet">
+												Scopri tutto ciò che <a href="https://www.unibo.it/it">Alma Mater Studiorum – Univeristy of Bologna</a> ha da offrire
+												<br>
+												<br>
+												Attualmente sto frequentando il secondo anno del <a href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge">Corso di Laurea Magistrale / Master biennale in Digital Humanities e Conoscenza Digitale</a>.
+												<br>
+												<br>
+												<span class="timestamp">Dai un’occhiata veloce!</span> 
+											</article>
+										</li>
+										<li></li>
+									</ul>
+								</section>
+
+
+								<section class="col-2 col-12-mobile">
+									<header>
+										<h2>
+											<span class="circled">
+												<a href="https://www.sautechgroup.com/"><i class="fa-beat-fade"><img src="images/Logo-Sautech.png" alt="" height="50px" ></i></a>
+											</span>
+											<h6>Sautech <br>
+												Group</h6>
+										</h2>
+									</header>
+									<br>
+									<ul class="divided">
+										<li>
+											<article class="tweet">
+												<a href="https://www.sautechgroup.com/">Sautech Group - System Integrator per l'innovazione tecnologica</a> è un noto system integrator che fornisce servizi e applicazioni tecnologicamente avanzati. 
+												<br>
+												<br>
+												Questo progetto è stato sviluppato sotto la guida e la supervisione esperta dei professionisti di Sautech.
+												<br>
+												<br>
+												<span class="timestamp">Vai a esplorare il loro sito!</span> 
+											</article>
+										</li>
+										<li></li>
+									</ul>
+								</section>
+
+		
+								
+						</div>
+						<br>
+						<br>
+					
+						<hr />
+<br>
+								<!-- Copyright -->
+									<div class="copyright">
+										<ul class="menu">
+											<li>&copy; Alice Piazzi All right reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+										</ul>
+									</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="js/jquery.min.js"></script>
+			<script src="js/jquery.dropotron.min.js"></script>
+			<script src="js/jquery.scrolly.min.js"></script>
+			<script src="js/jquery.scrollex.min.js"></script>
+			<script src="js/browser.min.js"></script>
+			<script src="js/breakpoints.min.js"></script>
+			<script src="js/util.js"></script>
+			<script src="js/main.js"></script>
+            <!-- PRIMA carichi Leaflet -->
+            <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+            <script type="module" src="js/map.js"></script>
+            <!-- POI il tuo file che usa Leaflet -->
+
+
+	</body>
+</html>
+
+
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'it', // lingua originale
+    includedLanguages: 'en,fr,es,de,zh-CN,ja,ru,pt,ar', // lingue disponibili, con l'inglese per prima
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+
+<script>
+document.getElementById("languagepicker").addEventListener("click", function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    document.getElementById("navpopup").classList.add("show");
+});
+</script>
+
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const placeFromUrl = params.get("place");
+
+if (placeFromUrl) {
+
+  stores.forEach(s => {
+    if (s.slug === placeFromUrl) {   // ✅ USA LO SLUG
+      hideAllMarkers();
+      map.addLayer(s.marker);
+      map.setView([s.location.lat, s.location.lng], 13);
+      s.marker.openPopup();
+    }
+  });
+
+}
+</script>
