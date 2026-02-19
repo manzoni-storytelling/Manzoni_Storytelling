@@ -1,0 +1,88 @@
+.faq-section {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #74978a!important;
+}
+
+
+.faq-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  padding: 10px;
+}
+.faq-question:hover{
+  background: rgb(140, 185, 152);
+  color: black !important;
+  font-weight: bold;
+}
+
+.faq-question .icon {
+  transition: transform 0.3s ease;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding: 0 0;
+}
+
+.faq-answer p {
+  margin: 10px 0;
+  color: #ddd;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 2400px; /* enough for content */
+  padding: 10px 0;
+}
+
+.faq-item.active .faq-question .icon {
+  transform: rotate(180deg);
+  content: "–";
+}
+
+.faq-li{
+  color: #ddd;;
+}
+.genstron-faqli{
+  color: black;
+}
+.stron-faqli{
+  color: black;
+  font-weight: bold;
+}
+#FAQipad{
+  height: 200px;
+  margin-right: 10px;
+}
+#FAQiphone{
+  height: 150px;
+  margin-right: 10px;
+}

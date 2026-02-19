@@ -1,0 +1,129 @@
+
+
+
+
+
+h2 {
+   text-align: center;
+ }
+
+
+ #sequences {
+   list-style: none;
+   padding: 0;
+   max-width: 600px;
+   margin: 20px auto;
+ }
+
+
+ #sequences li {
+   background: #fff;
+   margin: 8px 0;
+   padding: 12px 16px;
+   border: 1px solid #ccc;
+   cursor: grab;
+   border-radius: 6px;
+ }
+
+
+ #sequences li.dragging {
+   opacity: 0.5;
+ }
+  button {
+   display: block;
+   margin: 20px auto;
+   padding: 10px 20px;
+   border: none;
+   background: gray;
+   color: #fff;
+   font-size: 16px;
+   border-radius: 6px;
+   cursor: pointer;
+ }
+
+
+ button:hover {
+   background: #ccc;
+ }
+
+
+ #result {
+   text-align: center;
+   margin-top: 20px;
+   font-weight: bold;
+ }
+
+
+ .license-img {
+    width: 280px;
+    max-width: 90%;
+    margin: 20px auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+}
+
+.squaredboxes{
+  cursor: pointer;
+    border: 1px solid;
+    padding-left: 0.5em;
+    list-style-type: none;
+}
+
+.sequence-list li {
+  padding: 8px;
+  cursor: grab;
+  transition: background-color 0.2s;
+}
+
+/* Colore al passaggio del mouse (hover) */
+.sequence-list li:hover {
+  background-color: #ffd89c;  /* azzurro chiaro */
+}
+
+/* Colore quando l'elemento è selezionato/trascinato */
+.sequence-list li.dragging {
+  background-color: #ffd89c; /* arancio chiaro */
+  cursor: grabbing;
+}
+
+.sequence-list li.just-moved {
+  background-color: #fbe7c9; /* giallo chiaro */
+}
+
+
+
+/* accordion per pagina delle sequenze da riordinare */
+.chapter-content {
+    display: none; /* nascosta di default */
+    margin-top: 10px;
+    padding-left: 15px;
+    margin-bottom: 0px;
+}
+
+.chapter-title {
+    width: 100%;
+    text-align: left !important;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #edebe8;
+    color: black !important;
+    border: none;
+    padding: 10px 15px;
+    padding-right: 700px;
+    cursor: pointer;
+    outline: none;
+    margin-top: 5px;
+    transition: background-color 0.3s;
+}
+
+.chapter-title:hover {
+    background-color: #74978a;
+    color: #fff !important;
+    padding-right: 700px;
+}
+
+.chapter-title.active {
+    background-color: #74978a;
+    color: #fff !important;
+}
