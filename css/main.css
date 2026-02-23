@@ -252,7 +252,7 @@ input, select, textarea {
 	.container {
 		margin: 0 auto;
 		max-width: 100%;
-		width: 1400px;
+		
 	}
 
 		@media screen and (max-width: 1680px) {
@@ -479,6 +479,7 @@ input, select, textarea {
 		.row.gtr-50 {
 			margin-top: -20px;
 			margin-left: -20px;
+			padding: 20px;
 		}
 
 			.row.gtr-50 > * {
@@ -3549,6 +3550,22 @@ body {
   word-wrap: break-word;
 }
 
+@media screen and (max-width: 540px) {
+
+    .roundedimg {
+        max-width: 200px !important;
+		height: auto;
+    }
+
+}
+@media screen and (max-width: 330px) {
+
+    .roundedimg {
+        max-width: 100px !important;
+		height: auto;
+    }
+
+}
 
 
 /* Author page */
@@ -3942,6 +3959,9 @@ a strong:hover{
 	border-radius: 10px;
 	border: 1px solid #858484;
 	min-width: 150px !important;
+}
+.projecttitlecoldue{
+	padding-left: 20px;
 }
 
 
