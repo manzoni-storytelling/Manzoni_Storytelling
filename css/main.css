@@ -2579,6 +2579,8 @@ input, select, textarea {
 		background: #4b695d;
 		color:#F2F2F2;
 		height: 760px;
+		overflow: hidden;
+
 
 	}
 
@@ -2991,6 +2993,8 @@ body {
 				-ms-transition: -ms-transform 0.5s ease;
 				transition: transform 0.5s ease;
 				padding-bottom: 1px;
+				overflow: hidden;
+
 			}
 
 			#navButton {
