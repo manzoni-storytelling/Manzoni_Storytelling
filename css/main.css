@@ -2284,7 +2284,7 @@ input, select, textarea {
 		}
 
 	body.homepage #header {
-		height: 100vh;
+		
 		min-height: 40em;
 	}
 
@@ -2621,6 +2621,20 @@ input, select, textarea {
 				#footer .copyright a:hover {
 					color: rgba(212, 212, 212, 0.85);
 				}
+
+		
+		
+		
+		
+		@media screen and (max-width: 738px) {
+		
+				#footer {
+				padding: 4em 2em 4em 2em;
+				flex-direction: column;
+				min-height: min-content;
+				height: auto;
+			}
+		}
 
 /* Carousel */
 body {
@@ -2993,7 +3007,7 @@ body {
 				-ms-transition: -ms-transform 0.5s ease;
 				transition: transform 0.5s ease;
 				padding-bottom: 1px;
-				overflow: hidden;
+				overflow: visible;
 
 			}
 
@@ -4183,3 +4197,4 @@ a strong:hover{
 a {
   overflow-wrap: anywhere;
 }
+
